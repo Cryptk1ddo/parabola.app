@@ -1,8 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useAuth } from "@clerk/nextjs"
 import { Sidebar } from "@/components/sidebar"
 import { CommandPalette } from "@/components/command-palette"
+import { UserProfile } from "@/components/user-profile"
 import { FocusTimer } from "@/components/focus-timer"
 import { Breathwork } from "@/components/breathwork"
 import { NotesCapture } from "@/components/notes-capture"
@@ -33,14 +35,58 @@ import {
   Headphones,
   Volume2,
   VolumeX,
+  Loader2,
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 export default function Home() {
+  const { isLoaded, isSignedIn } = useAuth()
   const [activeSection, setActiveSection] = useState("focus")
   const [isMobile, setIsMobile] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const audioSystem = useAudioSystem()
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
+  // Show loading screen while Clerk is loading
+  if (!isLoaded) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-background">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center shadow-lg">
+            <span className="text-primary-foreground font-bold text-2xl">P</span>
+          </div>
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          <p className="text-muted-foreground">Loading Parabola...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Redirect to sign-in if not authenticated
+  if (!isSignedIn) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="text-center max-w-md mx-auto px-6">
+          <div className="mx-auto mb-6 w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center shadow-lg">
+            <span className="text-primary-foreground font-bold text-3xl">P</span>
+          </div>
+          <h1 className="text-3xl font-bold mb-4">Welcome to Parabola</h1>
+          <p className="text-muted-foreground mb-8">
+            Your advanced productivity OS for peak performance. Sign in to access your personalized workspace with binaural beats, AI coaching, and comprehensive habit tracking.
+          </p>
+          <div className="space-y-3">
+            <UserProfile />
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768)
@@ -366,6 +412,9 @@ export default function Home() {
           >
             <SettingsIcon className="h-4 w-4" />
           </Button>
+
+          {/* User Profile */}
+          <UserProfile />
         </div>
       </div>
     </div>

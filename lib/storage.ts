@@ -1,9 +1,11 @@
 /**
  * Data persistence utilities for Parabola productivity OS
  * Handles localStorage and IndexedDB for storing user data
+ * Integrates with Clerk authentication for user-specific data
  */
 
 import { useCallback, useEffect, useState } from "react"
+import { useUser } from "@clerk/nextjs"
 
 // Types for different data stores
 export interface UserPreferences {
@@ -51,14 +53,14 @@ export interface Habit {
   icon: string
 }
 
-// Storage keys
-const STORAGE_KEYS = {
-  PREFERENCES: "parabola_preferences",
-  FOCUS_SESSIONS: "parabola_focus_sessions",
-  NOTES: "parabola_notes",
-  HABITS: "parabola_habits",
-  ANALYTICS: "parabola_analytics",
-} as const
+// Storage keys function - creates user-specific keys
+const getStorageKeys = (userId?: string) => ({
+  PREFERENCES: `parabola_preferences${userId ? `_${userId}` : ''}`,
+  FOCUS_SESSIONS: `parabola_focus_sessions${userId ? `_${userId}` : ''}`,
+  NOTES: `parabola_notes${userId ? `_${userId}` : ''}`,
+  HABITS: `parabola_habits${userId ? `_${userId}` : ''}`,
+  ANALYTICS: `parabola_analytics${userId ? `_${userId}` : ''}`,
+})
 
 // Default preferences
 export const DEFAULT_PREFERENCES: UserPreferences = {
@@ -109,24 +111,34 @@ export function useLocalStorage<T>(key: string, defaultValue: T) {
 
 // Specialized hooks for different data types
 export function usePreferences() {
-  return useLocalStorage(STORAGE_KEYS.PREFERENCES, DEFAULT_PREFERENCES)
+  const { user } = useUser()
+  const storageKeys = getStorageKeys(user?.id)
+  return useLocalStorage(storageKeys.PREFERENCES, DEFAULT_PREFERENCES)
 }
 
 export function useFocusSessions() {
-  return useLocalStorage<FocusSession[]>(STORAGE_KEYS.FOCUS_SESSIONS, [])
+  const { user } = useUser()
+  const storageKeys = getStorageKeys(user?.id)
+  return useLocalStorage<FocusSession[]>(storageKeys.FOCUS_SESSIONS, [])
 }
 
 export function useNotes() {
-  return useLocalStorage<Note[]>(STORAGE_KEYS.NOTES, [])
+  const { user } = useUser()
+  const storageKeys = getStorageKeys(user?.id)
+  return useLocalStorage<Note[]>(storageKeys.NOTES, [])
 }
 
 export function useHabits() {
-  return useLocalStorage<Habit[]>(STORAGE_KEYS.HABITS, [])
+  const { user } = useUser()
+  const storageKeys = getStorageKeys(user?.id)
+  return useLocalStorage<Habit[]>(storageKeys.HABITS, [])
 }
 
 // Analytics data hook
 export function useAnalytics() {
-  const [analyticsData, setAnalyticsData] = useLocalStorage(STORAGE_KEYS.ANALYTICS, {
+  const { user } = useUser()
+  const storageKeys = getStorageKeys(user?.id)
+  const [analyticsData, setAnalyticsData] = useLocalStorage(storageKeys.ANALYTICS, {
     totalFocusTime: 0,
     completedSessions: 0,
     averageSessionDuration: 0,
@@ -162,13 +174,14 @@ export function useAnalytics() {
 }
 
 // Export/Import functionality
-export const exportData = () => {
+export const exportData = (userId?: string) => {
+  const storageKeys = getStorageKeys(userId)
   const data = {
-    preferences: localStorage.getItem(STORAGE_KEYS.PREFERENCES),
-    focusSessions: localStorage.getItem(STORAGE_KEYS.FOCUS_SESSIONS),
-    notes: localStorage.getItem(STORAGE_KEYS.NOTES),
-    habits: localStorage.getItem(STORAGE_KEYS.HABITS),
-    analytics: localStorage.getItem(STORAGE_KEYS.ANALYTICS),
+    preferences: localStorage.getItem(storageKeys.PREFERENCES),
+    focusSessions: localStorage.getItem(storageKeys.FOCUS_SESSIONS),
+    notes: localStorage.getItem(storageKeys.NOTES),
+    habits: localStorage.getItem(storageKeys.HABITS),
+    analytics: localStorage.getItem(storageKeys.ANALYTICS),
     exportedAt: new Date().toISOString(),
   }
   
@@ -181,7 +194,8 @@ export const exportData = () => {
   URL.revokeObjectURL(url)
 }
 
-export const importData = (file: File) => {
+export const importData = (file: File, userId?: string) => {
+  const storageKeys = getStorageKeys(userId)
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
     reader.onload = (e) => {
@@ -194,11 +208,11 @@ export const importData = (file: File) => {
         }
         
         // Import data
-        if (data.preferences) localStorage.setItem(STORAGE_KEYS.PREFERENCES, data.preferences)
-        if (data.focusSessions) localStorage.setItem(STORAGE_KEYS.FOCUS_SESSIONS, data.focusSessions)
-        if (data.notes) localStorage.setItem(STORAGE_KEYS.NOTES, data.notes)
-        if (data.habits) localStorage.setItem(STORAGE_KEYS.HABITS, data.habits)
-        if (data.analytics) localStorage.setItem(STORAGE_KEYS.ANALYTICS, data.analytics)
+        if (data.preferences) localStorage.setItem(storageKeys.PREFERENCES, data.preferences)
+        if (data.focusSessions) localStorage.setItem(storageKeys.FOCUS_SESSIONS, data.focusSessions)
+        if (data.notes) localStorage.setItem(storageKeys.NOTES, data.notes)
+        if (data.habits) localStorage.setItem(storageKeys.HABITS, data.habits)
+        if (data.analytics) localStorage.setItem(storageKeys.ANALYTICS, data.analytics)
         
         resolve(data)
       } catch (error) {
@@ -211,8 +225,9 @@ export const importData = (file: File) => {
 }
 
 // Clear all data
-export const clearAllData = () => {
-  Object.values(STORAGE_KEYS).forEach(key => {
+export const clearAllData = (userId?: string) => {
+  const storageKeys = getStorageKeys(userId)
+  Object.values(storageKeys).forEach(key => {
     localStorage.removeItem(key)
   })
   window.location.reload()
