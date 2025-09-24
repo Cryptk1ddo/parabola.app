@@ -70,8 +70,19 @@ These files should NOT be uploaded to your deployment:
 **Solution:** Ensure `.next/` is in your `.gitignore` and not committed to Git
 
 ### **Issue 2: Clerk build scripts warning**
+**Solution:** 
+1. Create `.pnpmrc` with `enable-pre-post-scripts=true`
+2. Run `pnpm approve-builds` to approve build scripts
+3. Select the packages to approve: @clerk/shared, @tailwindcss/oxide, sharp
 
-**Solution:** Use the `.pnpmrc` configuration included in this project
+**Commands:**
+```bash
+# This will prompt you to select which packages to approve
+pnpm approve-builds
+
+# Or reinstall to trigger the approval process
+pnpm install --force
+```
 
 ### **Issue 3: Environment variables not found**
 

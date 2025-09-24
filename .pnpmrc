@@ -1,5 +1,6 @@
+enable-pre-post-scripts=true
 
-# Allow Clerk's build scripts
+scripts-prepend-node-path=true# Allow Clerk's build scripts
 
 enable-pre-post-scripts=true
 
