@@ -1,0 +1,5 @@
+# Allow Clerk's build scripts
+enable-pre-post-scripts=true
+
+# Trust Clerk's shared package scripts
+trusted-dependencies=@clerk/shared
