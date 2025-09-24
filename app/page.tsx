@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Sidebar } from "@/components/sidebar"
+import { CommandPalette } from "@/components/command-palette"
 import { FocusTimer } from "@/components/focus-timer"
 import { Breathwork } from "@/components/breathwork"
 import { NotesCapture } from "@/components/notes-capture"
@@ -14,6 +15,8 @@ import { AnalyticsDashboard } from "@/components/analytics-dashboard"
 import { Settings } from "@/components/settings"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { ThemeToggle } from "@/components/theme-toggle"
+import { useAudioSystem } from "@/lib/audio"
 import {
   Menu,
   Target,
@@ -27,6 +30,9 @@ import {
   Shield,
   SettingsIcon,
   TrendingUp,
+  Headphones,
+  Volume2,
+  VolumeX,
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
@@ -34,6 +40,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("focus")
   const [isMobile, setIsMobile] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const audioSystem = useAudioSystem()
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768)
@@ -326,11 +333,50 @@ export default function Home() {
     </div>
   )
 
+  const DesktopHeader = () => (
+    <div className="sticky top-0 bg-background/98 backdrop-blur-xl supports-[backdrop-filter]:bg-background/95 border-b border-border/50 z-40 hidden md:block shadow-sm">
+      <div className="flex items-center justify-between p-4 min-h-[64px] max-w-7xl mx-auto">
+        <div className="flex items-center gap-4">
+          <CommandPalette activeSection={activeSection} onSectionChange={setActiveSection} />
+        </div>
+        
+        <div className="flex items-center gap-2">
+          {/* Audio Controls */}
+          <div className="flex items-center gap-1 mr-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => audioSystem.isPlaying ? audioSystem.stopAllAudio() : audioSystem.playBinauralBeats('focus')}
+              className="gap-2"
+            >
+              {audioSystem.isPlaying ? <VolumeX className="h-4 w-4" /> : <Headphones className="h-4 w-4" />}
+              <span className="text-xs">
+                {audioSystem.isPlaying ? 'Stop Audio' : 'Focus Audio'}
+              </span>
+            </Button>
+          </div>
+          
+          <ThemeToggle />
+          
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setActiveSection("settings")}
+            className={activeSection === "settings" ? "bg-accent" : ""}
+          >
+            <SettingsIcon className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+
   return (
     <div className="flex h-screen bg-background">
       {!isMobile && <Sidebar activeSection={activeSection} onSectionChange={setActiveSection} />}
 
       <main className="flex-1 overflow-auto">
+        {!isMobile && <DesktopHeader />}
         {isMobile && <MobileHeader />}
 
         <div className={`${isMobile ? "pb-28 pt-2" : "p-8"}`}>{renderContent()}</div>

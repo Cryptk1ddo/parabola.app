@@ -1,31 +1,6 @@
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/.pnpm/next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/.pnpm/next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/.pnpm/next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/font/local/target.css?{"path":"node_modules/.pnpm/geist@1.5.1_next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1_/node_modules/geist/dist/sans.js","import":"","arguments":[{"src":"./fonts/geist-sans/Geist-Variable.woff2","variable":"--font-geist-sans","weight":"100 900"}],"variableName":"GeistSans"} ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-@font-face {
-font-family: '__GeistSans_fb8f2c';
-src: url(/_next/static/media/028c0d39d2e8f589-s.p.woff2) format('woff2');
-font-display: swap;
-font-weight: 100 900;
-}@font-face {font-family: '__GeistSans_Fallback_fb8f2c';src: local("Arial");ascent-override: 85.83%;descent-override: 20.53%;line-gap-override: 9.33%;size-adjust: 107.19%
-}.__className_fb8f2c {font-family: '__GeistSans_fb8f2c', '__GeistSans_Fallback_fb8f2c'
-}.__variable_fb8f2c {--font-geist-sans: '__GeistSans_fb8f2c', '__GeistSans_Fallback_fb8f2c'
-}
-
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/.pnpm/next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/.pnpm/next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/.pnpm/next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/font/local/target.css?{"path":"node_modules/.pnpm/geist@1.5.1_next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1_/node_modules/geist/dist/mono.js","import":"","arguments":[{"src":"./fonts/geist-mono/GeistMono-Variable.woff2","variable":"--font-geist-mono","adjustFontFallback":false,"fallback":["ui-monospace","SFMono-Regular","Roboto Mono","Menlo","Monaco","Liberation Mono","DejaVu Sans Mono","Courier New","monospace"],"weight":"100 900"}],"variableName":"GeistMono"} ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-@font-face {
-font-family: '__GeistMono_f910ec';
-src: url(/_next/static/media/5b01f339abf2f1a5.p.woff2) format('woff2');
-font-display: swap;
-font-weight: 100 900;
-}.__className_f910ec {font-family: '__GeistMono_f910ec', ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace
-}.__variable_f910ec {--font-geist-mono: '__GeistMono_f910ec', ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace
-}
-
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/.pnpm/next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/.pnpm/next@14.2.16_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./app/globals.css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/.pnpm/next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
@@ -55,6 +30,7 @@ font-weight: 100 900;
     --container-md: 28rem;
     --container-lg: 32rem;
     --container-2xl: 42rem;
+    --container-7xl: 80rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
@@ -259,6 +235,9 @@ font-weight: 100 900;
   .invisible {
     visibility: hidden;
   }
+  .visible {
+    visibility: visible;
+  }
   .sr-only {
     position: absolute;
     width: 1px;
@@ -333,6 +312,9 @@ font-weight: 100 900;
   .right-1 {
     right: calc(var(--spacing) * 1);
   }
+  .right-1\.5 {
+    right: calc(var(--spacing) * 1.5);
+  }
   .right-2 {
     right: calc(var(--spacing) * 2);
   }
@@ -389,6 +371,9 @@ font-weight: 100 900;
   }
   .z-\[100\] {
     z-index: 100;
+  }
+  .col-span-1 {
+    grid-column: span 1 / span 1;
   }
   .col-start-2 {
     grid-column-start: 2;
@@ -626,6 +611,9 @@ font-weight: 100 900;
   .h-56 {
     height: calc(var(--spacing) * 56);
   }
+  .h-\[1\.2rem\] {
+    height: 1.2rem;
+  }
   .h-\[1\.15rem\] {
     height: 1.15rem;
   }
@@ -658,6 +646,9 @@ font-weight: 100 900;
   }
   .h-auto {
     height: auto;
+  }
+  .h-fit {
+    height: fit-content;
   }
   .h-full {
     height: 100%;
@@ -758,6 +749,9 @@ font-weight: 100 900;
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
   .w-32 {
     width: calc(var(--spacing) * 32);
   }
@@ -772,6 +766,9 @@ font-weight: 100 900;
   }
   .w-72 {
     width: calc(var(--spacing) * 72);
+  }
+  .w-\[1\.2rem\] {
+    width: 1.2rem;
   }
   .w-\[100px\] {
     width: 100px;
@@ -799,6 +796,9 @@ font-weight: 100 900;
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
+  }
+  .max-w-7xl {
+    max-width: var(--container-7xl);
   }
   .max-w-\[80\%\] {
     max-width: 80%;
@@ -916,6 +916,12 @@ font-weight: 100 900;
     --tw-translate-y: calc(-50% - 2px);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .scale-0 {
+    --tw-scale-x: 0%;
+    --tw-scale-y: 0%;
+    --tw-scale-z: 0%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
   .scale-90 {
     --tw-scale-x: 90%;
     --tw-scale-y: 90%;
@@ -937,6 +943,9 @@ font-weight: 100 900;
   .-rotate-90 {
     rotate: calc(90deg * -1);
   }
+  .rotate-0 {
+    rotate: 0deg;
+  }
   .rotate-45 {
     rotate: 45deg;
   }
@@ -953,7 +962,7 @@ font-weight: 100 900;
     animation: caret-blink 1.25s ease-out infinite;
   }
   .animate-in {
-    animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+    animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
   }
   .animate-pulse {
     animation: var(--animate-pulse);
@@ -1619,6 +1628,9 @@ font-weight: 100 900;
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
+  .py-0 {
+    padding-block: calc(var(--spacing) * 0);
+  }
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
   }
@@ -1766,6 +1778,9 @@ font-weight: 100 900;
   }
   .text-\[0\.8rem\] {
     font-size: 0.8rem;
+  }
+  .text-\[10px\] {
+    font-size: 10px;
   }
   .leading-none {
     --tw-leading: 1;
@@ -1930,6 +1945,9 @@ font-weight: 100 900;
     --tw-numeric-spacing: tabular-nums;
     font-variant-numeric: var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,);
   }
+  .line-through {
+    text-decoration-line: line-through;
+  }
   .underline-offset-4 {
     text-underline-offset: 4px;
   }
@@ -1951,6 +1969,9 @@ font-weight: 100 900;
   }
   .opacity-90 {
     opacity: 90%;
+  }
+  .opacity-100 {
+    opacity: 100%;
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -3235,7 +3256,7 @@ font-weight: 100 900;
   }
   .data-\[motion\^\=from-\]\:animate-in {
     &[data-motion^="from-"] {
-      animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+      animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
     }
   }
   .data-\[motion\^\=from-\]\:fade-in {
@@ -3245,7 +3266,7 @@ font-weight: 100 900;
   }
   .data-\[motion\^\=to-\]\:animate-out {
     &[data-motion^="to-"] {
-      animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+      animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
     }
   }
   .data-\[motion\^\=to-\]\:fade-out {
@@ -3613,12 +3634,12 @@ font-weight: 100 900;
   }
   .data-\[state\=closed\]\:animate-accordion-up {
     &[data-state="closed"] {
-      animation: accordion-up var(--tw-animation-duration,var(--tw-duration,.2s))ease-out;
+      animation: accordion-up var(--tw-animation-duration,var(--tw-duration,.2s))var(--tw-ease,ease-out)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
     }
   }
   .data-\[state\=closed\]\:animate-out {
     &[data-state="closed"] {
-      animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+      animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
     }
   }
   .data-\[state\=closed\]\:duration-300 {
@@ -3673,7 +3694,7 @@ font-weight: 100 900;
   .group-data-\[viewport\=false\]\/navigation-menu\:data-\[state\=closed\]\:animate-out {
     &:is(:where(.group\/navigation-menu)[data-viewport="false"] *) {
       &[data-state="closed"] {
-        animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+        animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
       }
     }
   }
@@ -3695,7 +3716,7 @@ font-weight: 100 900;
   }
   .data-\[state\=hidden\]\:animate-out {
     &[data-state="hidden"] {
-      animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+      animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
     }
   }
   .data-\[state\=hidden\]\:fade-out {
@@ -3715,12 +3736,12 @@ font-weight: 100 900;
   }
   .data-\[state\=open\]\:animate-accordion-down {
     &[data-state="open"] {
-      animation: accordion-down var(--tw-animation-duration,var(--tw-duration,.2s))ease-out;
+      animation: accordion-down var(--tw-animation-duration,var(--tw-duration,.2s))var(--tw-ease,ease-out)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
     }
   }
   .data-\[state\=open\]\:animate-in {
     &[data-state="open"] {
-      animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+      animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
     }
   }
   .data-\[state\=open\]\:bg-accent {
@@ -3808,7 +3829,7 @@ font-weight: 100 900;
   .group-data-\[viewport\=false\]\/navigation-menu\:data-\[state\=open\]\:animate-in {
     &:is(:where(.group\/navigation-menu)[data-viewport="false"] *) {
       &[data-state="open"] {
-        animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+        animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
       }
     }
   }
@@ -3880,7 +3901,7 @@ font-weight: 100 900;
   }
   .data-\[state\=visible\]\:animate-in {
     &[data-state="visible"] {
-      animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+      animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
     }
   }
   .data-\[state\=visible\]\:fade-in {
@@ -3902,7 +3923,7 @@ font-weight: 100 900;
   }
   .data-\[swipe\=end\]\:animate-out {
     &[data-swipe="end"] {
-      animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,forwards);
+      animation: exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
     }
   }
   .data-\[swipe\=move\]\:translate-x-\[var\(--radix-toast-swipe-move-x\)\] {
@@ -4165,6 +4186,11 @@ font-weight: 100 900;
       padding-right: calc(var(--spacing) * 2.5);
     }
   }
+  .sm\:pr-12 {
+    @media (width >= 40rem) {
+      padding-right: calc(var(--spacing) * 12);
+    }
+  }
   .sm\:pl-2\.5 {
     @media (width >= 40rem) {
       padding-left: calc(var(--spacing) * 2.5);
@@ -4201,6 +4227,16 @@ font-weight: 100 900;
       position: absolute;
     }
   }
+  .md\:col-span-2 {
+    @media (width >= 48rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .md\:col-span-3 {
+    @media (width >= 48rem) {
+      grid-column: span 3 / span 3;
+    }
+  }
   .md\:block {
     @media (width >= 48rem) {
       display: block;
@@ -4229,6 +4265,11 @@ font-weight: 100 900;
   .md\:h-\[400px\] {
     @media (width >= 48rem) {
       height: 400px;
+    }
+  }
+  .md\:w-40 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 40);
     }
   }
   .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\] {
@@ -4264,6 +4305,11 @@ font-weight: 100 900;
   .md\:grid-cols-5 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-6 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
     }
   }
   .md\:flex-row {
@@ -4415,9 +4461,24 @@ font-weight: 100 900;
       grid-column: span 3 / span 3;
     }
   }
+  .lg\:hidden {
+    @media (width >= 64rem) {
+      display: none;
+    }
+  }
   .lg\:inline {
     @media (width >= 64rem) {
       display: inline;
+    }
+  }
+  .lg\:inline-flex {
+    @media (width >= 64rem) {
+      display: inline-flex;
+    }
+  }
+  .lg\:w-64 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 64);
     }
   }
   .lg\:grid-cols-3 {
@@ -4433,6 +4494,32 @@ font-weight: 100 900;
   .lg\:grid-cols-7 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+  }
+  .dark\:scale-0 {
+    &:is(.dark *) {
+      --tw-scale-x: 0%;
+      --tw-scale-y: 0%;
+      --tw-scale-z: 0%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+  .dark\:scale-100 {
+    &:is(.dark *) {
+      --tw-scale-x: 100%;
+      --tw-scale-y: 100%;
+      --tw-scale-z: 100%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+  .dark\:-rotate-90 {
+    &:is(.dark *) {
+      rotate: calc(90deg * -1);
+    }
+  }
+  .dark\:rotate-0 {
+    &:is(.dark *) {
+      rotate: 0deg;
     }
   }
   .dark\:border-input {
@@ -5081,12 +5168,17 @@ font-weight: 100 900;
 @property --tw-animation-fill-mode {
   syntax: "*";
   inherits: false;
-  initial-value: forwards;
+  initial-value: none;
 }
 @property --tw-animation-iteration-count {
   syntax: "*";
   inherits: false;
   initial-value: 1;
+}
+@property --tw-enter-blur {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 @property --tw-enter-opacity {
   syntax: "*";
@@ -5109,6 +5201,11 @@ font-weight: 100 900;
   initial-value: 0;
 }
 @property --tw-enter-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-exit-blur {
   syntax: "*";
   inherits: false;
   initial-value: 0;
@@ -5695,12 +5792,14 @@ font-weight: 100 900;
   from {
     opacity: var(--tw-enter-opacity,1);
     transform: translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0));
+    filter: blur(var(--tw-enter-blur,0));
   }
 }
 @keyframes exit {
   to {
     opacity: var(--tw-exit-opacity,1);
     transform: translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0));
+    filter: blur(var(--tw-exit-blur,0));
   }
 }
 @keyframes accordion-down {
@@ -5708,12 +5807,12 @@ font-weight: 100 900;
     height: 0;
   }
   to {
-    height: var(--radix-accordion-content-height,var(--bits-accordion-content-height,var(--reka-accordion-content-height,var(--kb-accordion-content-height,auto))));
+    height: var(--radix-accordion-content-height,var(--bits-accordion-content-height,var(--reka-accordion-content-height,var(--kb-accordion-content-height,var(--ngp-accordion-content-height,auto)))));
   }
 }
 @keyframes accordion-up {
   from {
-    height: var(--radix-accordion-content-height,var(--bits-accordion-content-height,var(--reka-accordion-content-height,var(--kb-accordion-content-height,auto))));
+    height: var(--radix-accordion-content-height,var(--bits-accordion-content-height,var(--reka-accordion-content-height,var(--kb-accordion-content-height,var(--ngp-accordion-content-height,auto)))));
   }
   to {
     height: 0;
@@ -5791,13 +5890,15 @@ font-weight: 100 900;
       --tw-animation-delay: 0s;
       --tw-animation-direction: normal;
       --tw-animation-duration: initial;
-      --tw-animation-fill-mode: forwards;
+      --tw-animation-fill-mode: none;
       --tw-animation-iteration-count: 1;
+      --tw-enter-blur: 0;
       --tw-enter-opacity: 1;
       --tw-enter-rotate: 0;
       --tw-enter-scale: 1;
       --tw-enter-translate-x: 0;
       --tw-enter-translate-y: 0;
+      --tw-exit-blur: 0;
       --tw-exit-opacity: 1;
       --tw-exit-rotate: 0;
       --tw-exit-scale: 1;
@@ -5805,5 +5906,30 @@ font-weight: 100 900;
       --tw-exit-translate-y: 0;
     }
   }
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/.pnpm/next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/.pnpm/next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/font/local/target.css?{"path":"node_modules/.pnpm/geist@1.5.1_next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1_/node_modules/geist/dist/sans.js","import":"","arguments":[{"src":"./fonts/geist-sans/Geist-Variable.woff2","variable":"--font-geist-sans","weight":"100 900"}],"variableName":"GeistSans"} ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: 'GeistSans';
+src: url(/_next/static/media/028c0d39d2e8f589-s.p.woff2) format('woff2');
+font-display: swap;
+font-weight: 100 900;
+}@font-face {font-family: 'GeistSans Fallback';src: local("Arial");ascent-override: 85.83%;descent-override: 20.53%;line-gap-override: 9.33%;size-adjust: 107.19%
+}.__className_fb8f2c {font-family: 'GeistSans', 'GeistSans Fallback'
+}.__variable_fb8f2c {--font-geist-sans: 'GeistSans', 'GeistSans Fallback'
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/.pnpm/next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/.pnpm/next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/font/local/target.css?{"path":"node_modules/.pnpm/geist@1.5.1_next@15.5.4_react-dom@19.1.1_react@19.1.1__react@19.1.1_/node_modules/geist/dist/mono.js","import":"","arguments":[{"src":"./fonts/geist-mono/GeistMono-Variable.woff2","variable":"--font-geist-mono","adjustFontFallback":false,"fallback":["ui-monospace","SFMono-Regular","Roboto Mono","Menlo","Monaco","Liberation Mono","DejaVu Sans Mono","Courier New","monospace"],"weight":"100 900"}],"variableName":"GeistMono"} ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: 'GeistMono';
+src: url(/_next/static/media/5b01f339abf2f1a5.p.woff2) format('woff2');
+font-display: swap;
+font-weight: 100 900;
+}.__className_f910ec {font-family: 'GeistMono', ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace
+}.__variable_f910ec {--font-geist-mono: 'GeistMono', ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace
 }
 
